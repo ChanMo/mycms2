@@ -1,0 +1,14 @@
+{% extends "default/base.html" %}
+{% block main %}
+<div class="small-12 medium-8 columns">
+  <h2>{{ page.title }}</h2>
+  <div>{{ page.content|safe }}</div>
+</div>
+<div class="small-12 medium-4 columns">
+  <ul class="menu vertical">
+    {% for item in sibling_list %}
+    <li><a href="{% url 'page' item.slug %}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+banner/__init__.py
+banner/admin.py
+banner/apps.py
+banner/models.py
+banner/tests.py
+banner/views.py
+django_banner.egg-info/PKG-INFO
+django_banner.egg-info/SOURCES.txt
+django_banner.egg-info/dependency_links.txt
+django_banner.egg-info/top_level.txt

@@ -1,0 +1,24 @@
+{% extends "default/base.html" %}
+{% load staticfiles %}
+{% block main %}
+<div class="small-12 columns">
+<div class="row collapse">
+  <div class="medium-3 columns">
+    <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
+      {% for item in children_list %}
+      <li class="tabs-title {% if forloop.first %}is-active{% endif %}"><a href="#panel{{ item.id }}v" {% if forloop.first %}aria-selected="true"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+    <div class="medium-9 columns">
+    <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
+      {% for item in children_list %}
+      <div class="tabs-panel {% if forloop.first %}is-active{% endif %}" id="panel{{ item.id }}v">
+        {{ item.content|safe }}
+      </div>
+    　{% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
