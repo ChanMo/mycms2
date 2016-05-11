@@ -1,5 +1,8 @@
 from django.views.generic import View, TemplateView
+from mycms2 import settings
 from .models import Page
+
+theme = settings.THEME
 
 class BaseView(View):
     def get_context_data(self, **kwargs):
@@ -8,7 +11,7 @@ class BaseView(View):
         return context
 
 class HomeView(BaseView, TemplateView):
-    template_name = 'default/index.html'
+    template_name = theme+'/index.html'
 
 class PageView(BaseView, TemplateView):
     def get_context_data(self, **kwargs):
@@ -23,4 +26,4 @@ class PageView(BaseView, TemplateView):
         return context
 
     def get_template_names(self, **kwargs):
-        return 'default/%s.html' % self.page.template
+        return theme+'/%s.html' % self.page.template

@@ -139,3 +139,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Full',
     }
 }
+
+
+# Theme
+THEME = 'default'
