@@ -1,5 +1,5 @@
 *.pyc
 db.sqlite3
-mycms2/migrations
+mycms2/*/migrations
 mycms2/media
 mycms2/static
