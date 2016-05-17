@@ -10,17 +10,12 @@
 
 .. code-block::
 
+    git clone https://github.com/ChanMo/mycms2 project_com 
     mkdir project_com
     cd project_com
     virtualenv env
     source env/bin/activate
     pip install requirement.txt
-
-使用mycms2:
-
-.. code-block::
-
-   git clone https://github.com/ChanMo/mycms2 
 
 更新数据库:
 
