@@ -15,7 +15,7 @@
     cd project_com
     virtualenv env
     source env/bin/activate
-    pip install requirement.txt
+    pip install -r requirement.txt
 
 更新数据库:
 
