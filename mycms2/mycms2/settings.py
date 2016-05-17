@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 
 # Ckeditor config
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',
