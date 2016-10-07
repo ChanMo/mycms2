@@ -12,9 +12,10 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
+          <!--li class="menu-text"><a href="/">MyCMS</a></li-->
           <li class="menu-text">MyCMS</li>
           {% for menu in menu_list %}
-          <li><a href="{{ menu.real_link }}">{{ menu.title }}</a></li>
+          <li><a href="{{ menu.get_link }}">{{ menu.title }}</a></li>
           {% endfor %}
         </ul>
       </div>

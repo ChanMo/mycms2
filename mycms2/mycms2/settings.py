@@ -25,7 +25,7 @@ SECRET_KEY = 'n5nw!2&4c7y$!_u73a014@_clw05*9hz%gvrfy#1x&j(yd5j4f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000']
 
 
 # Application definition
@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
+    'mptt',
     'ckeditor',
     'ckeditor_uploader',
-    'mptt',
     'adminsortable2',
     'banner',
     'page',
@@ -55,6 +56,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
 ]
 
 ROOT_URLCONF = 'mycms2.urls'
@@ -85,6 +88,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+# Cache
+CACHES = {
+    #'default': {
+    #    'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+    #    'LOCATION': 'my_cache_table',
+    #}
+    #'default': {
+    #    'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+    #    'LOCATION': '/home/chen/Code/me/mycms2/django_cache',
+    #}
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
     }
 }
 
@@ -136,7 +155,17 @@ STATIC_URL = '/static/'
 CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Full',
+        'toolbar': 'Custom',
+	'toolbar_Custom': [
+	    ['Format'],
+	    ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
+	    ['Link', 'Unlink'],
+	    ['TextColor', 'BGColor'],
+	    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+	    ['SpecialChar', 'Image'],
+	    ['Source'],
+	    ['Maximize'],
+	]
     }
 }
 

@@ -1,0 +1,56 @@
+Metadata-Version: 2.0
+Name: django-banner
+Version: 0.3.3
+Summary: A simple banner module.
+Home-page: http://github.com/ChanMo/django_banner
+Author: ChanMo
+Author-email: chen.orange@aliyun.com
+License: BSD License
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Dist: Pillow (>=2.3.0)
+Requires-Dist: django-admin-sortable2 (>=0.6.3)
+
+Django-banner
+=============
+
+基于django的轮播图模块
+
+使用方法:
+---------
+
+修改 *settings.py* 文件:
+
+.. code-block::
+
+    INSTALLED_APPS = (
+        ...
+        'adminsortable2',
+        'banner',
+        ...
+    )
+
+添加数据表:
+
+.. code-block::
+
+    python manage.py migrate
+
+
+版本更改:
+---------
+- v0.3 添加多语言支持
+- v0.2 添加分组
+- v0.1 第一版
+
+

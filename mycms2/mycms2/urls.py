@@ -22,6 +22,7 @@ from page.views import HomeView, PageView
 
 urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^(?P<slug>[0-9a-z_]+)/$', PageView.as_view(), name='page'),
