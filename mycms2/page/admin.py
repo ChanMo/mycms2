@@ -1,16 +1,27 @@
 from django.utils.translation import ugettext_lazy as _
+from django import forms
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
 from mptt.admin import DraggableMPTTAdmin
 from .models import Theme, Template, Page
+from mycms2.widgets import HtmlEditor
 
 class ThemeAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_actived', 'created')
     prepopulated_fields = {'value': ('name',)}
 
+class TemplateForm(forms.ModelForm):
+    model = Template
+    class Meta:
+        fields = '__all__'
+        widgets = {
+            'code': HtmlEditor(),
+        }
+
 class TemplateAdmin(admin.ModelAdmin):
     list_display = ('theme', 'name', 'created')
     list_filter = ('theme', 'created', 'updated')
+    form = TemplateForm
 
 class PageAdmin(DraggableMPTTAdmin, admin.ModelAdmin):
     list_display = ('tree_actions', 'indented_title', 'template', 'is_show',\
