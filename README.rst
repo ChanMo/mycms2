@@ -3,9 +3,6 @@ MyCMS2
 
 一个基于django的简单的cms系统
 
-介绍:
---------
-
 基于django，拥有页面和主题模板两项功能。可以自由切换网站主题模板，也可在后台实事修改模板代码。
 
 基于:
@@ -54,3 +51,7 @@ MyCMS2
 .. code-block::
 
     python manage.py runserver
+
+网站主页 `http://localhost:8000/`
+
+网站后台 `http://localhost:8000/admin/`
