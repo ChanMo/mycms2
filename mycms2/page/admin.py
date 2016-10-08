@@ -1,24 +1,32 @@
+from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from adminsortable2.admin import SortableAdminMixin
 from mptt.admin import MPTTModelAdmin
 from mptt.admin import DraggableMPTTAdmin
-from .models import Page
+from .models import Theme, Template, Page
+
+class ThemeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_actived', 'created')
+    prepopulated_fields = {'value': ('name',)}
+
+class TemplateAdmin(admin.ModelAdmin):
+    list_display = ('theme', 'name', 'created')
+    list_filter = ('theme', 'created', 'updated')
 
 class PageAdmin(DraggableMPTTAdmin, admin.ModelAdmin):
     list_display = ('tree_actions', 'indented_title', 'template', 'is_show',\
             'created')
     list_filter = ('created', 'updated')
     list_display_links=('indented_title',)
-    search_fields = ('title', 'intro')
+    search_fields = ('title', 'content')
     prepopulated_fields = {'slug': ('title',)}
     view_on_site = True
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'content')
+            'fields': ('parent', 'title', 'slug', 'content', 'template')
         }),
-        ('More', {
+        (_('more'), {
             'classes': ('collapse',),
-            'fields' : ('parent', 'template', 'link', 'is_show')
+            'fields' : ('link', 'is_show')
         }),
     )
 
@@ -26,3 +34,5 @@ class PageAdmin(DraggableMPTTAdmin, admin.ModelAdmin):
         return obj.get_link()
 
 admin.site.register(Page, PageAdmin)
+admin.site.register(Theme, ThemeAdmin)
+admin.site.register(Template, TemplateAdmin)

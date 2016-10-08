@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'ckeditor_uploader',
-    'adminsortable2',
-    'banner',
+    #'adminsortable2',
+    #'banner',
     'page',
 ]
 
@@ -91,7 +91,9 @@ DATABASES = {
     }
 }
 
+
 # Cache
+"""
 CACHES = {
     #'default': {
     #    'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
@@ -99,13 +101,14 @@ CACHES = {
     #}
     #'default': {
     #    'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-    #    'LOCATION': '/home/chen/Code/me/mycms2/django_cache',
+    #    'LOCATION': 'mycms2/django_cache',
     #}
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
     }
 }
+"""
 
 
 # Password validation
@@ -146,7 +149,8 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 
@@ -158,17 +162,11 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Custom',
 	'toolbar_Custom': [
 	    ['Format'],
-	    ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
-	    ['Link', 'Unlink'],
-	    ['TextColor', 'BGColor'],
-	    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-	    ['SpecialChar', 'Image'],
+	    ['Bold', 'Italic', 'Strike', 'TextColor', 'BGColor'],
+	    ['Link', 'Unlink', 'Image'],
+	    ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
 	    ['Source'],
 	    ['Maximize'],
 	]
     }
 }
-
-
-# Theme
-THEME = 'default'

@@ -18,14 +18,14 @@ from django.contrib import admin
 
 from django.conf.urls.static import static
 from . import settings
-from page.views import HomeView, PageView
+from page.views import index, page
 
 urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^(?P<slug>[0-9a-z_]+)/$', PageView.as_view(), name='page'),
+    url(r'^$', index, name='home'),
+    url(r'^(?P<slug>[0-9a-z_]+)/$', page, name='page'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

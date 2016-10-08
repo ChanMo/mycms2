@@ -2,10 +2,14 @@
 *.pyc
 
 # django migrations files
-**/migrations
+**/migrations/
+**/__pycache__/
+**/templates/
 
+env/
 env2.7/
 env3.5/
 
 mycms2/media/
 mycms2/static/
+db.sqlite3

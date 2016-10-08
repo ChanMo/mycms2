@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-07 16:14+0800\n"
+"POT-Creation-Date: 2016-10-08 00:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: models.py:10
-msgid "title"
-msgstr "标题"
+#: admin.py:27
+msgid "more"
+msgstr "更多"
 
-#: models.py:11
-msgid "slug"
-msgstr "链接名"
-
-#: models.py:12
-msgid "please input a-z or 0-9"
-msgstr "请输入唯一的链接名，可以包含数字，英文字母和下划线"
+#: models.py:13 models.py:40
+msgid "name"
+msgstr "名称"
 
 #: models.py:14
-msgid "parent"
-msgstr "父级"
+msgid "value"
+msgstr "值"
 
 #: models.py:15
-msgid "cover"
-msgstr "封面"
+msgid "is actived"
+msgstr "使用"
 
-#: models.py:17
-msgid "content"
-msgstr "内容"
-
-#: models.py:18
-msgid "link"
-msgstr "外部链接"
-
-#: models.py:19
-msgid "template"
-msgstr "模板"
-
-#: models.py:21
-msgid "is show"
-msgstr "发布"
-
-#: models.py:22
+#: models.py:16 models.py:42 models.py:73
 msgid "created"
 msgstr "创建时间"
 
-#: models.py:23
+#: models.py:17 models.py:43 models.py:74
 msgid "updated"
 msgstr "更新时间"
 
-#: models.py:35 models.py:36
+#: models.py:33 models.py:34 models.py:39
+msgid "theme"
+msgstr "主题"
+
+#: models.py:41
+msgid "code"
+msgstr "代码"
+
+#: models.py:52 models.py:53 models.py:71
+msgid "template"
+msgstr "模板"
+
+#: models.py:64
+msgid "title"
+msgstr "标题"
+
+#: models.py:65
+msgid "slug"
+msgstr "链接名"
+
+#: models.py:66
+msgid "please input a-z or 0-9"
+msgstr "请输入唯一的链接名，可以包含数字，英文字母和下划线"
+
+#: models.py:68
+msgid "parent"
+msgstr "父级"
+
+#: models.py:69
+msgid "content"
+msgstr "内容"
+
+#: models.py:70
+msgid "link"
+msgstr "外部链接"
+
+#: models.py:72
+msgid "is show"
+msgstr "发布"
+
+#: models.py:101 models.py:102
 msgid "page"
 msgstr "页面"
+
+#~ msgid "cover"
+#~ msgstr "封面"
