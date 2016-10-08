@@ -13,6 +13,7 @@ def get_template(template_name='index'):
 
 def index(request):
     context = {
+        'base': TP(get_template('base')),
         'menu_list': Page.objects.root_nodes().filter(is_show=True),
     }
     template = TP(get_template())
@@ -22,6 +23,7 @@ def index(request):
 def page(request, slug):
     page = Page.objects.get(slug=slug)
     context = {
+        'base': TP(get_template('base')),
         'page': page,
         'menu_list': Page.objects.root_nodes().filter(is_show=True),
         'children_list': page.get_children().filter(is_show=True),
