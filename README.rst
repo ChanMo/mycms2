@@ -1,26 +1,57 @@
-基本的cms系统
-=============
+MyCMS2
+========
 
-一个简单的cms系统
+一个基于django的简单的cms系统
 
-快速开始：
+基于django，拥有页面和主题模板两项功能。可以自由切换网站主题模板，也可在后台实事修改模板代码。
+
+基于
+--------
+
+* django
+* django-flat-theme
+* django-ckeditor
+* django-mptt
+* beautifulsoup4
+* breach
+
+
+快速开始
 ----------
 
-使用virtualenv:
+下载代码:
 
 .. code-block::
 
-    git clone https://github.com/ChanMo/mycms2 project_com 
-    mkdir project_com
-    cd project_com
+    git clone https://github.com/ChanMo/mycms2 project 
+
+
+创建代码环境:
+
+.. code-block::
+
+    cd project
     virtualenv env
     source env/bin/activate
     pip install -r requirement.txt
 
-更新数据库:
+
+操作数据库:
 
 .. code-block::
 
     cd mycms2
     python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py makemigrations page
+    python manage.py migrate
 
+测试:
+
+.. code-block::
+
+    python manage.py runserver
+
+网站主页 `http://localhost:8000/`
+
+网站后台 `http://localhost:8000/admin/`
