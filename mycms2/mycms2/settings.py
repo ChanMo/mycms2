@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'ckeditor_uploader',
-    #'adminsortable2',
-    #'banner',
     'page',
 ]
 
@@ -89,6 +87,17 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #    'HOST': 'localhost',
+    #    'NAME': '',
+    #    'USER': '',
+    #    'PASSWORD': '',
+    #    'STORAGE_ENGINE': 'MyISAM / INNODB',
+    #    'OPTIONS': {
+    #        'init_command': 'SET storage_engine=MyISAM;',
+    #    }
+    #}
 }
 
 
