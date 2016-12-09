@@ -10,6 +10,7 @@ env/
 env*/
 
 mycms2/media/
-mycms2/static/
+mycms2/static/*
+!/mycms2/static/codemirror
 
 db.sqlite3
